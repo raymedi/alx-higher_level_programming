@@ -1,10 +1,10 @@
 #!/usr/bin/python3
+"""This define a locked class"""
+
+
+class LockedClass:
     """
-    Definition for a LockedClass class.
+    Only allows installation of an atribute called first_name
     """
 
-
-    class LockedClass:
-        """LockedClass class that defines 1 attribute"""
-
-        __slots__ = ['first_name']
+    __slots__ = ["first_name"]
