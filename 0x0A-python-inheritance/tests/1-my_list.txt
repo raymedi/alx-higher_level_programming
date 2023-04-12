@@ -1,16 +1,20 @@
-#!/usr/bin/python3
-"""
-===========================
-Module with class MyList
-===========================
-"""
+1-my_list
+=========
 
+importing class:
+	>>> MyList = __import__('1-my_list').MyList
 
-class MyList(list):
-    """Class with method print_sorted"""
-    pass
+checking for module docstring:
+	>>> m = __import__('1-my_list').__doc__
+	>>> len(m) > 1
+	True
 
-    def print_sorted(self):
-        """Methot that sorted a list"""
+checking for class docstring:
+	>>> c = __import__('1-my_list').MyList.__doc__
+	>>> len(c) > 1
+	True
 
-        print(sorted(list(self)))
+checking for method docstring:
+	>>> f = __import__('1-my_list').MyList.print_sorted.__doc__
+	>>> len(f) > 1
+	True
