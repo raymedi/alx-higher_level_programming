@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-This script changes the name of a State object
-from the database `hbtn_0e_6_usa`.
+This script adds the State object
+`Louisiana` to the database `hbtn_0e_6_usa`.
 """
 
 from sys import argv
@@ -11,7 +11,8 @@ from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
     """
-    Updates a State object on the database.
+    Access to the database and get a state
+    from the database.
     """
 
     db_uri = 'mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
@@ -21,7 +22,8 @@ if __name__ == "__main__":
 
     session = Session()
 
-    ari_state = session.query(State).filter(State.id == '2').first()
-    ari_state.name = 'New Mexico'
+    lou_state = State(name='Louisiana')
+    session.add(lou_state)
     session.commit()
+    print('{0}'.format(lou_state.id))
     session.close()
